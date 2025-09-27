@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "sleeper-mcp": {
+      "command": "node",
+      "args": ["/path/to/sleeper-mcp/dist/index.js"],
+      "env": {}
+    }
+  }
+}
