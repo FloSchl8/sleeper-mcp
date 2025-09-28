@@ -1,6 +1,4 @@
-import { CallToolRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 import { sleeperClient } from "./sleeper-client.js";
-import { z } from "zod";
 import {
   GetUserInfoSchema,
   GetUserLeaguesSchema,
