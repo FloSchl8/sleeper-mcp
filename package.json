@@ -1,6 +1,6 @@
 {
   "name": "sleeper-mcp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "MCP Server for Sleeper Fantasy Football API - AI-powered fantasy football analysis with Claude integration",
   "type": "module",
   "main": "dist/index.js",
