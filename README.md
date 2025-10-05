@@ -1,6 +1,21 @@
 # Sleeper Fantasy Football MCP Server
 
+[![npm version](https://badge.fury.io/js/sleeper-mcp.svg)](https://badge.fury.io/js/sleeper-mcp)
+[![Downloads](https://img.shields.io/npm/dm/sleeper-mcp.svg)](https://npmjs.org/package/sleeper-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/node/v/sleeper-mcp.svg)](https://nodejs.org/en/)
+
 A comprehensive Model Context Protocol (MCP) Server for integrating with Sleeper Fantasy Football. This server enables AI assistants like Claude to perform advanced fantasy football analysis and provide strategic recommendations.
+
+## 📦 Installation
+
+```bash
+# Install globally (recommended)
+npm install -g sleeper-mcp
+
+# Or use with npx (no installation needed)
+npx sleeper-mcp
+```
 
 ## 🎯 What Can This Server Do?
 
@@ -24,14 +39,56 @@ A comprehensive Model Context Protocol (MCP) Server for integrating with Sleeper
 ## 🚀 Quick Start
 
 ### 1. Installation
+
+Choose one of these installation methods:
+
+#### Option A: Global NPM Install (Recommended)
 ```bash
+npm install -g sleeper-mcp
+```
+
+#### Option B: Using npx (No Installation)
+```bash
+npx sleeper-mcp
+```
+
+#### Option C: Local Development
+```bash
+git clone https://github.com/yourusername/sleeper-mcp.git
+cd sleeper-mcp
 npm install
 npm run build
 ```
 
 ### 2. Claude Desktop Configuration
-Add to your `claude_desktop_config.json`:
 
+#### For Global Install or npx:
+```json
+{
+  "mcpServers": {
+    "sleeper-mcp": {
+      "command": "sleeper-mcp",
+      "args": [],
+      "env": {}
+    }
+  }
+}
+```
+
+#### For npx (alternative):
+```json
+{
+  "mcpServers": {
+    "sleeper-mcp": {
+      "command": "npx",
+      "args": ["sleeper-mcp"],
+      "env": {}
+    }
+  }
+}
+```
+
+#### For Local Development:
 ```json
 {
   "mcpServers": {
@@ -174,7 +231,22 @@ Start a conversation with Claude and try:
 
 ## 🔧 Development
 
+### For Users
 ```bash
+# Install globally
+npm install -g sleeper-mcp
+
+# Or use directly
+npx sleeper-mcp
+```
+
+### For Contributors
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/sleeper-mcp.git
+cd sleeper-mcp
+npm install
+
 # Development with hot reload
 npm run dev
 
@@ -184,6 +256,10 @@ npm start
 
 # Watch mode (automatic rebuilding)
 npm run watch
+
+# Run tests
+npm test
+npm run test:coverage
 ```
 
 ## ⚠️ Limitations
