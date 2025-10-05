@@ -33,15 +33,15 @@
     "api",
     "typescript"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Florian Schlund <mail@floschl.dev>",
   "license": "MIT",
-  "homepage": "https://github.com/yourusername/sleeper-mcp#readme",
+  "homepage": "https://github.com/floschl8/sleeper-mcp#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/sleeper-mcp.git"
+    "url": "git+https://github.com/floschl8/sleeper-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/sleeper-mcp/issues"
+    "url": "https://github.com/floschl8/sleeper-mcp/issues"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.4.0",
