@@ -1,9 +1,15 @@
 {
   "name": "sleeper-mcp",
   "version": "1.0.0",
-  "description": "MCP Server for Sleeper Fantasy Football API",
+  "description": "MCP Server for Sleeper Fantasy Football API - AI-powered fantasy football analysis with Claude integration",
   "type": "module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts",
@@ -11,16 +17,32 @@
     "watch": "tsc --watch",
     "test": "node test.mjs",
     "test:coverage": "c8 --reporter=text --reporter=html node test.mjs",
-    "coverage": "npm run test:coverage"
+    "coverage": "npm run test:coverage",
+    "prepublishOnly": "npm run build",
+    "prepack": "npm run build"
   },
   "keywords": [
     "mcp",
     "sleeper",
     "fantasy football",
-    "nfl"
+    "nfl",
+    "claude",
+    "ai",
+    "model-context-protocol",
+    "fantasy-sports",
+    "api",
+    "typescript"
   ],
-  "author": "Your Name",
+  "author": "Your Name <your.email@example.com>",
   "license": "MIT",
+  "homepage": "https://github.com/yourusername/sleeper-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/sleeper-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/sleeper-mcp/issues"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.4.0",
     "node-fetch": "^3.3.2",

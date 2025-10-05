@@ -1,0 +1,58 @@
+# Source files
+src/
+*.ts
+tsconfig.json
+
+# Development files
+.github/
+.vscode/
+.idea/
+
+# Test files
+test.mjs
+coverage/
+.c8_output/
+.nyc_output
+
+# Documentation (keep README.md)
+SETUP.md
+EXAMPLES.md
+CACHING.md
+
+# Config examples
+claude_desktop_config.example.json
+
+# Cache and temp files
+.cache/
+*.log
+*.tmp
+
+# Development dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git files
+.gitignore
+.gitattributes
+
+# CI files
+.travis.yml
+.circleci/
+appveyor.yml
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Package files
+*.tgz
