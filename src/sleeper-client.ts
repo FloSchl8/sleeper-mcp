@@ -155,13 +155,13 @@ export class SleeperClient {
       this.players.size > 0 &&
       now - this.playersLastUpdated < this.PLAYERS_CACHE_DURATION
     ) {
-      console.log(
+      console.error(
         `Using cached player data (${this.players.size} players, age: ${Math.round((now - this.playersLastUpdated) / (60 * 60 * 1000))}h)`,
       );
       return this.players;
     }
 
-    console.log(
+    console.error(
       "Fetching all players from Sleeper API (this may take a moment)...",
     );
     const playersData = await this.fetch<Record<string, SleeperPlayer>>(
@@ -174,7 +174,7 @@ export class SleeperClient {
     });
 
     this.playersLastUpdated = now;
-    console.log(`Loaded ${this.players.size} players into memory cache`);
+    console.error(`Loaded ${this.players.size} players into memory cache`);
 
     // Save to persistent cache
     await this.savePlayersToCache();
@@ -217,9 +217,9 @@ export class SleeperClient {
       };
       await fs.writeFile(CACHE_META_FILE, JSON.stringify(cacheData, null, 2));
 
-      console.log(`Saved ${this.players.size} players to persistent cache`);
+      console.error(`Saved ${this.players.size} players to persistent cache`);
     } catch (error) {
-      console.warn(
+      console.error(
         "Failed to save players cache:",
         error instanceof Error ? error.message : "Unknown error",
       );
@@ -238,7 +238,7 @@ export class SleeperClient {
 
       // Check if cache is still valid
       if (now - metaData.lastUpdated >= this.PLAYERS_CACHE_DURATION) {
-        console.log("Persistent cache expired, will fetch fresh data");
+        console.error("Persistent cache expired, will fetch fresh data");
         return;
       }
 
@@ -258,12 +258,12 @@ export class SleeperClient {
       const cacheAgeHours = Math.round(
         (now - this.playersLastUpdated) / (60 * 60 * 1000),
       );
-      console.log(
+      console.error(
         `Loaded ${this.players.size} players from persistent cache (age: ${cacheAgeHours}h)`,
       );
     } catch (error) {
       // Cache doesn't exist or is corrupted, will fetch fresh data
-      console.log(
+      console.error(
         "No valid persistent cache found, will fetch fresh player data",
       );
       this.players.clear();
@@ -279,9 +279,9 @@ export class SleeperClient {
       this.players.clear();
       this.playersLastUpdated = 0;
       this.cacheInitialized = false;
-      console.log("Cache cleared successfully");
+      console.error("Cache cleared successfully");
     } catch (error) {
-      console.log("Cache files not found or already cleared");
+      console.error("Cache files not found or already cleared");
     }
   }
 
